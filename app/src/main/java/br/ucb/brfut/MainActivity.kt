@@ -1,19 +1,21 @@
 package br.ucb.brfut
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.StringRes
-import com.android.volley.Header
+import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_tela_tabela.*
 import kotlinx.android.synthetic.main.activity_tela_time.*
+import org.json.JSONObject
+import java.net.URL
 import javax.security.auth.AuthPermission
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,55 +24,60 @@ class MainActivity : AppCompatActivity() {
 
         btnBuscar.setOnClickListener {
             var nome_time:String = entradatime.text.toString()
-            val intentTelaTime = Intent(this, TelaTime::class.java)
-            startActivity(intentTelaTime)
             exibirTime(nome_time)
-
         }
-
-
     }
 
-    fun exibirTime(time:String) {
-
-        var idtime = null
-
+    fun exibirTime(param_time:String) {
+        var idtime = retorna_times(param_time)
         val first_queue = Volley.newRequestQueue(this)
-        val url_times = "https://api.api-futebol.com.br/v1/partidas/10"
+//        val url_times = "https://api.api-futebol.com.br/v1/campeonatos"
+        val url_times = "https://api.api-futebol.com.br/v1/times/${idtime}"
 
-        val firtStringRequest = StringRequest(Request.Method.GET, url_times,
-                Response.Listener<String> { response ->
-                    val first_gson = GsonBuilder().create()
-                    val first_resultado = first_gson.fromJson(response.toString(),
-                            Array<Clube>::class.java)
-                            .toList()
-                    idtime = first_resultado.firstOrNull()?.time_id as Nothing?
+        println("idtime: " + idtime)
 
+        val accessTokenRequest: JsonObjectRequest = object : JsonObjectRequest(
+                Request.Method.GET, url_times, JSONObject(),
+                Response.Listener<JSONObject?> { response ->
+                    var nome_time = response.getString("nome_popular")
+                    var sigla = response.getString("sigla")
 
-                },
-                Response.ErrorListener { nome_popular.text = "Deu ruim2" })
-        first_queue.add(firtStringRequest)
+                    val intentTelaTime = Intent(this, TelaTime::class.java)
+                    intentTelaTime.putExtra("nome_time", nome_time.toString())
+                    intentTelaTime.putExtra("sigla", sigla.toString())
+                    startActivity(intentTelaTime)
 
-        // Instatiate the RequestQueue.
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://api.api-futebol.com.br/v1/times/${idtime}"
-
-        val token = "live_bce21c345086b3d00ce55e583cb1ad"
-
-        // Request a string response from the provided URL.
-        val stringRequest = StringRequest(Request.Method.GET,  url,
-                Response.Listener<String> { response ->
-
-                    val gson = GsonBuilder().create()
-                    val resultado = gson.fromJson(response.toString(), Array<Clube>::class.java)
-                            .toList()
-
-                    nome_popular.text = resultado.firstOrNull()?.nome_popular.toString()
-                    sigla.text = resultado.firstOrNull()?.sigla.toString()
-                },
-                Response.ErrorListener { nome_popular.text = "Deu ruim" })
-        queue.add(stringRequest)
+                }, Response.ErrorListener {
+                    println("ERRO")
+                }) {
+                    override fun getHeaders(): Map<String, String>? {
+                        val headers: MutableMap<String, String> = HashMap()
+                        headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
+//                        headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
+                        return headers
+                }
+        }
+        first_queue.add(accessTokenRequest)
     }
+
+    fun retorna_times(times:String): Int {
+        if(times == "América-MG"){
+            return 33
+        } else if(times == "Athletico-PR") {
+            return 185
+        }
+        return 0
+
+
+
+    }
+
 }
+
+
+
+
+
+
 
 

@@ -24,14 +24,12 @@ class TelaTabela : AppCompatActivity() {
         val descricao = arrayOf("","")
 
         // Variável imagemId recebe um arrays com o objeto de cada imagem
-        val imagemId = arrayOf(R.drawable.gol, R.drawable.jetta, R.drawable.voyage, R.drawable.up,
-                R.drawable.polo, R.drawable.saveiro, R.drawable.fox, R.drawable.virtus,
-                R.drawable.nivus)
+//        val imagemId = arrayOf("")
+//
+//        // Recebe a classe e passa as variáveis de acordo com cada argumento
+//        val novaListAdapter = MyListAdapter(this, carros, descricao, imagemId)
 
-        // Recebe a classe e passa as variáveis de acordo com cada argumento
-        val novaListAdapter = MyListAdapter(this, carros, descricao, imagemId)
-
-        list_view.adapter = novaListAdapter
+//        list_view.adapter = novaListAdapter
 
         // recebe a lista adaptada e ao clicar chama outra intent com a imagem do carro
         list_view.onItemClickListener = AdapterView.OnItemClickListener {
