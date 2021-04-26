@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaTime">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/btnGreen"
+        android:text="Time"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/escudoTime"
+        android:layout_width="189dp"
+        android:layout_height="193dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="66dp"
+        />
+
+    <TextView
+        android:id="@+id/nome_popular"
+        android:layout_width="209dp"
+        android:layout_height="28dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="321dp"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/sigla"
+        android:layout_width="109dp"
+        android:layout_height="28dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="367dp"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/campeonatos"
+        android:layout_width="150dp"
+        android:layout_height="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="493dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/campeonatos"
+        />
+
+    <Button
+        android:id="@+id/btnBrasileiro"
+        android:layout_width="153dp"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="560dp"
+        android:background="@color/btnGreen"
+        android:text="Brasileiro"
+        />
+
+    <Button
+        android:id="@+id/btnCopaBrasil"
+        android:layout_width="153dp"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="229dp"
+        android:layout_marginTop="560dp"
+        android:background="@color/btnGreen"
+        android:text="Copa do Brasil"
+        />
+
+
+</RelativeLayout>

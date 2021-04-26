@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Brfut</string>
+    <string name="nome_popular">NomePopular</string>
+    <string name="sigla">Sigla</string>
+    <string name="campeonatos">Campeonatos</string>
+
+</resources>
