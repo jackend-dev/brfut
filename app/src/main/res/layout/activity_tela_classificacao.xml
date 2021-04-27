@@ -6,103 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".TelaClassificacao">
 
-    <View
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:background="@color/btnGreen"
-        android:text="Time"
-        android:textAlignment="center" />
+        android:text="Classificação"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/escudoTime"
         android:layout_width="189dp"
-        android:layout_height="193dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="106dp"
+        android:layout_marginRight="106dp"
         android:layout_marginTop="66dp"
         />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="285dp"
-        android:layout_marginLeft="29dp"
-        android:text="Posição"
-        android:gravity="top"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="331dp"
-        android:layout_marginLeft="29dp"
-        android:text="Pontos"
-        android:gravity="top"/>
-
-    <TextView
+        android:id="@+id/posicao"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="29dp"
-        android:layout_marginTop="377dp"
+        android:layout_marginTop="237dp"
         android:gravity="top"
-        android:text="Jogos" />
+        android:text="Posição"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <TextView
+        android:id="@+id/jogos"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="423dp"
         android:layout_marginLeft="29dp"
+        android:layout_marginTop="329dp"
+        android:gravity="top"
+        android:text="Jogos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <TextView
+        android:id="@+id/vitorias"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="375dp"
+        android:gravity="top"
         android:text="Vitoria"
-        android:gravity="top"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="469dp"
-        android:layout_marginLeft="29dp"
-        android:text="Empates"
-        android:gravity="top"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <TextView
+        android:id="@+id/empates"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="515dp"
         android:layout_marginLeft="29dp"
-        android:text="Derrotas"
-        android:gravity="top"/>
+        android:layout_marginTop="421dp"
+        android:gravity="top"
+        android:text="Empates"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
     <TextView
+        android:id="@+id/derrotas"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="561dp"
         android:layout_marginLeft="29dp"
+        android:layout_marginTop="467dp"
+        android:gravity="top"
+        android:text="Derrotas"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <TextView
+        android:id="@+id/saldo_gols"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="513dp"
+        android:gravity="top"
         android:text="Saldo de Gols"
-        android:gravity="top"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <TextView
+        android:id="@+id/pontos"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="283dp"
+        android:gravity="top"
+        android:text="Pontos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <Button
-        android:id="@+id/btnSocioTorcedor"
+        android:id="@+id/btnSaibaMais"
         android:layout_width="353dp"
         android:layout_height="53dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="644dp"
-        android:text="Seja Sócio Torcedor"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="579dp"
         android:backgroundTint="@color/btnGreen"
-        />
-
+        android:text="Saiba Mais"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
 </RelativeLayout>

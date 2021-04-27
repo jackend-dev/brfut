@@ -1,24 +1,41 @@
 package br.ucb.brfut
 
-import android.app.Activity
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-class MyListAdapter(private val context: Activity, private val title: Array<String>, private val description: Array<String>, private val imgid: Array<Int>)
-    : ArrayAdapter<String>(context, R.layout.activity_tela_tabela, title) {
+class MyListAdapter(context: Context, private val title: ArrayList<Clube>)
 
-    override fun getView(position: Int, view: View?, parent: ViewGroup): View {
-        val inflater = context.layoutInflater
-        val rowView = inflater.inflate(R.layout.activity_tela_tabela, null, true)
+    : BaseAdapter() {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val item = getItem(position) as Clube
 
-        val titleText = rowView.findViewById(R.id.titulo) as TextView
-        val imageView = rowView.findViewById(R.id.escudo) as ImageView
-        val subtitleText = rowView.findViewById(R.id.descricao) as TextView
+        val rowView = inflater.inflate(R.layout.activity_list_view_customizada, parent,
+                false)
 
-        titleText.text = title[position]
-        imageView.setImageResource(imgid[position])
-        subtitleText.text = description[position]
+        val nome_time = rowView.findViewById(R.id.titulo) as TextView
+        val sigla_time = rowView.findViewById(R.id.descricao) as TextView
+
+        nome_time.text = item.nome_popular
+        sigla_time.text = item.sigla
 
         return rowView
     }
+
+    override fun getItem(position: Int): Any {
+        return title[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getCount(): Int {
+        return title.size
+    }
+
+    private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
+            as LayoutInflater
+
 }

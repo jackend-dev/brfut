@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     fun exibirTime(param_time:String) {
         var idtime = retorna_times(param_time)
         val first_queue = Volley.newRequestQueue(this)
-//        val url_times = "https://api.api-futebol.com.br/v1/campeonatos"
+
         val url_times = "https://api.api-futebol.com.br/v1/times/${idtime}"
 
         println("idtime: " + idtime)
@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity() {
                 }) {
                     override fun getHeaders(): Map<String, String>? {
                         val headers: MutableMap<String, String> = HashMap()
-                        headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
-//                        headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
+//                        headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
+                        headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
                         return headers
                 }
         }
@@ -64,6 +64,42 @@ class MainActivity : AppCompatActivity() {
         if(times == "América-MG"){
             return 33
         } else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Atlético-GO") {
+            return 98
+        }else if(times == "Atlético-MG") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
+            return 185
+        }else if(times == "Athletico-PR") {
             return 185
         }
         return 0

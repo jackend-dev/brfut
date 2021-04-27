@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".TelaTime">
 
-    <View
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:background="@color/btnGreen"
         android:text="Time"
-        android:textAlignment="center"
-        />
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/escudoTime"
@@ -33,6 +34,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginTop="321dp"
         android:gravity="top"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         />
 
     <TextView
@@ -44,6 +46,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginTop="367dp"
         android:gravity="top"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         />
 
     <TextView
@@ -56,6 +59,7 @@
         android:layout_marginLeft="130dp"
         android:gravity="center_horizontal|top"
         android:text="@string/campeonatos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         />
 
     <Button
@@ -77,9 +81,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="229dp"
+        android:layout_marginRight="29dp"
         android:layout_marginTop="560dp"
         android:backgroundTint="@color/btnGreen"
         android:text="Copa do Brasil"
+
         />
 
 
