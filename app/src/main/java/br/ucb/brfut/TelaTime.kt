@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_tela_time.*
+import org.json.JSONArray
 import org.json.JSONObject
 
 class TelaTime : AppCompatActivity() {
@@ -43,34 +45,59 @@ class TelaTime : AppCompatActivity() {
         val queue = Volley.newRequestQueue(this)
         val url = url_p
 
-        val stringRequest = StringRequest(Request.Method.GET,  url,
-                Response.Listener<String> { response ->
+        val accessTokenRequest: JsonArrayRequest = object : JsonArrayRequest(
+            Request.Method.GET, url, JSONArray(),
+            Response.Listener<JSONArray?> { response ->
+                println("RE: "+ response)
+//                var nome_time = response.getString("nome_popular")
+//                var sigla = response.getString("sigla")
+//
+//                val intentTelaTime = Intent(this, TelaTime::class.java)
+//                intentTelaTime.putExtra("nome_time", nome_time.toString())
+//                intentTelaTime.putExtra("sigla", sigla.toString())
+//                startActivity(intentTelaTime)
 
-                    val gson = GsonBuilder().create()
-                    val resultado = gson.fromJson(response.toString(), Array<Clube>::class.java)
-                            .toList()
-                    println("resultado: "+resultado)
-//                    nome_popular.text = resultado.firstOrNull()?.nome_popular.toString()
-//                    sigla.text = resultado.firstOrNull()?.sigla.toString()
-                }, Response.ErrorListener {
-//            println("ERRO" +Response.ErrorListener)
-//                nome_popular.text = "Deu ruim2"//To change body of created functions use File | Settings | File Templates.
-        }){
-            fun getHeaders(): Map<String, String>? {
+            }, Response.ErrorListener {
+                println("ERRO")
+            }) {
+            override fun getHeaders(): Map<String, String>? {
                 val headers: MutableMap<String, String> = HashMap()
                 headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
-//                headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
+//                        headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
                 return headers
             }
-
         }
-        queue.add(stringRequest as Request<Any>?)
-
-
+        queue.add(accessTokenRequest)
     }
 
-    private fun StringRequest(get: Int, url: String, listener: Response.Listener<String>, errorListener: Response.ErrorListener, function: () -> Unit) {
-
-    }
+//        val stringRequest = StringRequest(Request.Method.GET,  url,
+//                Response.Listener<String> { response ->
+//
+//                    val gson = GsonBuilder().create()
+//                    val resultado = gson.fromJson(response.toString(), Array<Clube>::class.java)
+//                            .toList()
+//                    println("resultado: "+resultado)
+////                    nome_popular.text = resultado.firstOrNull()?.nome_popular.toString()
+////                    sigla.text = resultado.firstOrNull()?.sigla.toString()
+//                }, Response.ErrorListener {
+////            println("ERRO" +Response.ErrorListener)
+////                nome_popular.text = "Deu ruim2"//To change body of created functions use File | Settings | File Templates.
+//        }){
+//            fun getHeaders(): Map<String, String>? {
+//                val headers: MutableMap<String, String> = HashMap()
+//                headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
+////                headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
+//                return headers
+//            }
+//
+//        }
+//        queue.add(stringRequest as Request<Any>?)
+//
+//
+//    }
+//
+//    private fun StringRequest(get: Int, url: String, listener: Response.Listener<String>, errorListener: Response.ErrorListener, function: () -> Unit) {
+//
+//    }
 
 }

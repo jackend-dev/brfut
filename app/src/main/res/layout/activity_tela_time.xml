@@ -11,7 +11,8 @@
         android:layout_height="51dp"
         android:background="@color/btnGreen"
         android:text="Time"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        />
 
     <ImageView
         android:id="@+id/escudoTime"
@@ -65,7 +66,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="29dp"
         android:layout_marginTop="560dp"
-        android:background="@color/btnGreen"
+        android:backgroundTint="@color/btnGreen"
         android:text="Brasileiro"
         />
 
@@ -77,7 +78,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="229dp"
         android:layout_marginTop="560dp"
-        android:background="@color/btnGreen"
+        android:backgroundTint="@color/btnGreen"
         android:text="Copa do Brasil"
         />
 
