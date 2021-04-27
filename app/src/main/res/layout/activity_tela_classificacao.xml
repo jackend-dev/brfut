@@ -16,7 +16,7 @@
         android:textColor="@color/white" />
 
     <ImageView
-        android:id="@+id/escudoTime"
+        android:id="@+id/escudoClube"
         android:layout_width="189dp"
         android:layout_height="150dp"
         android:layout_alignParentLeft="true"

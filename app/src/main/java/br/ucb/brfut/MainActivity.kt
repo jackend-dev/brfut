@@ -68,43 +68,41 @@ class MainActivity : AppCompatActivity() {
         }else if(times == "Atlético-GO") {
             return 98
         }else if(times == "Atlético-MG") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
-        }else if(times == "Athletico-PR") {
-            return 185
+            return 30
+        }else if(times == "Bahia") {
+            return 68
+        }else if(times == "Bragantino") {
+            return 64
+        }else if(times == "Ceará") {
+            return 105
+        }else if(times == "Chapecoense") {
+            return 5
+        }else if(times == "Corinthians") {
+            return 65
+        }else if(times == "Cuiabá") {
+            return 204
+        }else if(times == "Flamengo") {
+            return 18
+        }else if(times == "Fluminense") {
+            return 26
+        }else if(times == "Fortaleza") {
+            return 131
+        }else if(times == "Grêmio") {
+            return 45
+        }else if(times == "Internacional") {
+            return 44
+        }else if(times == "Juventude") {
+            return 43
+        }else if(times == "Palmeiras") {
+            return 56
+        }else if(times == "Santos") {
+            return 63
+        }else if(times == "São Paulo") {
+            return 57
+        }else if(times == "Sport") {
+            return 79
         }
         return 0
-
-
 
     }
 

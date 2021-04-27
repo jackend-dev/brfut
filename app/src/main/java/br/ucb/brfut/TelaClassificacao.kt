@@ -11,7 +11,7 @@ class TelaClassificacao : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_classificacao)
-
+        var nome = intent.getStringExtra("nome_time")
         var valor_posicao = intent.getStringExtra("posicao")
         var valor_pontos = intent.getStringExtra("pontos")
         var valor_jogos = intent.getStringExtra("jogos")
@@ -27,6 +27,10 @@ class TelaClassificacao : AppCompatActivity() {
         empates.text = "Empates: "+valor_empates
         derrotas.text = "Derrotas: "+valor_derrotas
         saldo_gols.text = "Salgo de gols: "+valor_saldoGols
+
+        if (nome.toString() == "Bahia"){
+            escudoClube.setImageResource(R.drawable.bahia)
+        }
 
         btnSaibaMais.setOnClickListener{
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cbf.com.br"

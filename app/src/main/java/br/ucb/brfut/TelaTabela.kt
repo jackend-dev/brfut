@@ -47,9 +47,15 @@ class TelaTabela : AppCompatActivity() {
                 ))
             }
 
+            val imagemId = arrayOf(R.drawable.americamg, R.drawable.athleticogo,
+                    R.drawable.athleticopr, R.drawable.bahia
+                    )
+
             val adapter = MyListAdapter(this, lista)
             println("list: "+ adapter)
             list_view.adapter = adapter
+
+
 
             list_view.onItemClickListener = AdapterView.OnItemClickListener {
                 parent, view, position, id ->
@@ -71,8 +77,8 @@ class TelaTabela : AppCompatActivity() {
         }) {
             override fun getHeaders(): Map<String, String>? {
                 val headers: MutableMap<String, String> = HashMap()
-                headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
-//                headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
+//                headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
+                headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
                 return headers
             }
         }

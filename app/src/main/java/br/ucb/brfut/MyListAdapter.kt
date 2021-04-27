@@ -17,6 +17,7 @@ class MyListAdapter(context: Context, private val title: ArrayList<Clube>)
         val nome_time = rowView.findViewById(R.id.titulo) as TextView
         val sigla_time = rowView.findViewById(R.id.descricao) as TextView
 
+
         nome_time.text = item.nome_popular
         sigla_time.text = item.sigla
 
@@ -39,3 +40,5 @@ class MyListAdapter(context: Context, private val title: ArrayList<Clube>)
             as LayoutInflater
 
 }
+
+

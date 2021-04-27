@@ -26,80 +26,64 @@ class TelaTime : AppCompatActivity() {
         nome_popular.text = nome
         sigla.text = sigla_time
 
+        if (nome != null) {
+            exibir_escudo(nome)
+        }
+
         btnBrasileiro.setOnClickListener {
-//            val urlBrasileirao = "https://api.api-futebol.com.br/v1/campeonatos/10/tabela"
-//            exibirTabela(urlBrasileirao)
             val intentBrasileirao = Intent(this, TelaTabela::class.java)
             startActivity(intentBrasileirao)
         }
 
         btnCopaBrasil.setOnClickListener {
-//            val urlCopaDoBrasil = "https://api.api-futebol.com.br/v1/campeonatos/10/tabela"
-//            exibirTabela(urlCopaDoBrasil)
             val intentCopaDoBrasil = Intent(this, TelaTabela::class.java)
             startActivity(intentCopaDoBrasil)
 
         }
     }
 
-//    fun exibirTabela(url_p:String){
-//
-//        val queue = Volley.newRequestQueue(this)
-//        val url = url_p
-//
-//        val accessTokenRequest: JsonArrayRequest = object : JsonArrayRequest(
-//            Request.Method.GET, url, JSONArray(),
-//            Response.Listener<JSONArray?> { response ->
-//                println("RE: "+ response)
-////                var nome_time = response.getString("nome_popular")
-////                var sigla = response.getString("sigla")
-////
-////                val intentTelaTime = Intent(this, TelaTime::class.java)
-////                intentTelaTime.putExtra("nome_time", nome_time.toString())
-////                intentTelaTime.putExtra("sigla", sigla.toString())
-////                startActivity(intentTelaTime)
-//
-//            }, Response.ErrorListener {
-//                println("ERRO")
-//            }) {
-//            override fun getHeaders(): Map<String, String>? {
-//                val headers: MutableMap<String, String> = HashMap()
-////                headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
-//                headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
-//                return headers
-//            }
-//        }
-//        queue.add(accessTokenRequest)
-//    }
-//
-////        val stringRequest = StringRequest(Request.Method.GET,  url,
-////                Response.Listener<String> { response ->
-////
-////                    val gson = GsonBuilder().create()
-////                    val resultado = gson.fromJson(response.toString(), Array<Clube>::class.java)
-////                            .toList()
-////                    println("resultado: "+resultado)
-//////                    nome_popular.text = resultado.firstOrNull()?.nome_popular.toString()
-//////                    sigla.text = resultado.firstOrNull()?.sigla.toString()
-////                }, Response.ErrorListener {
-//////            println("ERRO" +Response.ErrorListener)
-//////                nome_popular.text = "Deu ruim2"//To change body of created functions use File | Settings | File Templates.
-////        }){
-////            fun getHeaders(): Map<String, String>? {
-////                val headers: MutableMap<String, String> = HashMap()
-////                headers["Authorization"] = "Bearer test_9f7800a1c03cc1aeb725c5f1d20b78"
-//////                headers["Authorization"] = "Bearer live_bce21c345086b3d00ce55e583cb1ad"
-////                return headers
-////            }
-////
-////        }
-////        queue.add(stringRequest as Request<Any>?)
-////
-////
-////    }
-////
-////    private fun StringRequest(get: Int, url: String, listener: Response.Listener<String>, errorListener: Response.ErrorListener, function: () -> Unit) {
-////
-////    }
+    fun exibir_escudo(nome:String){
+        if(nome.toString() == "América-MG"){
+            escudoTime.setImageResource(R.drawable.americamg)
+        } else if(nome.toString() == "Athletico-PR") {
+            escudoTime.setImageResource(R.drawable.athleticopr)
+        }else if(nome.toString() == "Atlético-GO") {
+            escudoTime.setImageResource(R.drawable.athleticogo)
+        }else if(nome.toString() == "Atlético-MG") {
+            escudoTime.setImageResource(R.drawable.atleticomg)
+        }else if(nome.toString() == "Bahia") {
+            escudoTime.setImageResource(R.drawable.bahia)
+        }else if(nome.toString() == "Bragantino") {
+            escudoTime.setImageResource(R.drawable.bragantino)
+        }else if(nome.toString() == "Ceará") {
+            escudoTime.setImageResource(R.drawable.ceara)
+        }else if(nome.toString() == "Chapecoense") {
+            escudoTime.setImageResource(R.drawable.chapecoense)
+        }else if(nome.toString() == "Corinthians") {
+            escudoTime.setImageResource(R.drawable.corinthians)
+        }else if(nome.toString() == "Cuiabá") {
+            escudoTime.setImageResource(R.drawable.cuiaba)
+        }else if(nome.toString() == "Flamengo") {
+            escudoTime.setImageResource(R.drawable.flamengo)
+        }else if(nome.toString() == "Fluminense") {
+            escudoTime.setImageResource(R.drawable.fluminense)
+        }else if(nome.toString() == "Fortaleza") {
+            escudoTime.setImageResource(R.drawable.fortaleza)
+        }else if(nome.toString() == "Grêmio") {
+            escudoTime.setImageResource(R.drawable.gremio)
+        }else if(nome.toString() == "Internacional") {
+            escudoTime.setImageResource(R.drawable.internacional)
+        }else if(nome.toString() == "Juventude") {
+            escudoTime.setImageResource(R.drawable.juventude)
+        }else if(nome.toString() == "Palmeiras") {
+            escudoTime.setImageResource(R.drawable.palmeiras)
+        }else if(nome.toString() == "Santos") {
+            escudoTime.setImageResource(R.drawable.santos)
+        }else if(nome.toString() == "São Paulo") {
+            escudoTime.setImageResource(R.drawable.sao_paulo)
+        }else if(nome.toString() == "Sport") {
+            escudoTime.setImageResource(R.drawable.sport)
+        }
+    }
 
 }

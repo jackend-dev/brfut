@@ -12,12 +12,12 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-        <ImageView
-            android:id="@+id/escudo"
-            android:layout_width="141dp"
-            android:layout_height="86dp"
-            android:src="@drawable/brfutlogo"
-            />
+<!--        <ImageView-->
+<!--            android:id="@+id/escudo"-->
+<!--            android:layout_width="141dp"-->
+<!--            android:layout_height="86dp"-->
+
+<!--            />-->
 
         <LinearLayout
             android:layout_width="match_parent"
